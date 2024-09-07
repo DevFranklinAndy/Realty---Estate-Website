@@ -1,0 +1,209 @@
+.property-card {
+  position: relative;
+  perspective: 200rem;
+  height: 52rem;
+
+  &__side {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transition: transform 0.8s;
+    box-shadow: $shadow-light;
+    border-radius: 3px;
+
+    &--front {
+      background-color: $neutral-color-1;
+    }
+
+    &--back {
+      transform: rotateY(180deg) translateY(0);
+      background: linear-gradient(
+        to right bottom,
+        $primary-color-light,
+        $primary-color-dark
+      );
+      color: $grey-color-light;
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  // Front
+  &__photo {
+    height: 24rem;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    background-blend-mode: screen;
+    background-size: cover;
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $primary-color-main,
+          $primary-color-main
+        ),
+        url(../img/house-1.jpg);
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $primary-color-main,
+          $primary-color-main
+        ),
+        url(../img/house-2.jpg);
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $primary-color-main,
+          $primary-color-main
+        ),
+        url(../img/house-3.jpg);
+    }
+
+    &--4 {
+      background-image: linear-gradient(
+          to right bottom,
+          $primary-color-main,
+          $primary-color-main
+        ),
+        url(../img/house-4.jpg);
+    }
+
+    &--5 {
+      background-image: linear-gradient(
+          to right bottom,
+          $primary-color-main,
+          $primary-color-main
+        ),
+        url(../img/house-5.jpg);
+    }
+
+    &--6 {
+      background-image: linear-gradient(
+          to right bottom,
+          $primary-color-main,
+          $primary-color-main
+        ),
+        url(../img/house-6.jpg);
+    }
+  }
+
+  &__title {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $grey-color-light;
+    width: 70%;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    text-align: right;
+  }
+
+  &__title-text {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    line-height: 1.6;
+    background: linear-gradient(
+      to right bottom,
+      rgba($primary-color-main, 0.9),
+      rgba($primary-color-main, 0.9)
+    );
+  }
+
+  &__attributes {
+    width: 65%;
+    margin: 0 auto;
+    padding-top: 2rem;
+    font-size: $font-default;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+      list-style: none;
+      text-align: center;
+    }
+
+    li {
+      border-bottom: 1px solid rgba($grey-color-main, 0.1);
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__action {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__text {
+    font-size: $font-default;
+    margin-bottom: 3.2rem;
+  }
+
+  &__price {
+    font-size: $font-h2;
+    font-weight: 300;
+  }
+
+  @media only screen and (max-width: $breakpoint-tablet-min),
+    only screen and (hover: none) {
+    height: auto;
+    background-color: $grey-color-light;
+    border-radius: 3px;
+
+    &__side {
+      position: relative;
+      height: auto;
+      box-shadow: none;
+
+      &--back {
+        transform: rotateY(0) translateY(-8rem);
+        clip-path: polygon(0 50px, 100% 0, 100% 100%, 0 100%);
+      }
+
+      &--front {
+        padding-bottom: 4.5rem;
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    &:hover &__side--back {
+      transform: rotateY(0) translateY(-8rem);
+    }
+
+    &__attributes {
+      padding-bottom: 4rem;
+    }
+
+    ul {
+      gap: 4rem;
+    }
+
+    &__action {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      padding: 7rem 4rem 4rem;
+    }
+  }
+}

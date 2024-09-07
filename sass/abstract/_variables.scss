@@ -1,0 +1,35 @@
+$primary-color-main: #f57c00;
+$primary-color-light: #fead66;
+$primary-color-dark: #e65100;
+
+$grey-color-main: #555;
+$grey-color-light: #f5f5f5;
+$grey-color-dark: #212121;
+
+$accent-color-1: #1976d2;
+$accent-color-2: #388e3c;
+$accent-color-3: #ffa000;
+$accent-color-4: #c2185b;
+$accent-color-5: #0097a7;
+
+$neutral-color-1: #fff;
+$neutral-color-2: #000;
+
+$typeface-primary: "Montserrat", sans-serif;
+$typeface-normal: "Mulish", sans-serif;
+
+$shadow-light: 0 2rem 3.2rem rgba($neutral-color-2, 0.15);
+
+$font-h1: 7rem;
+$font-h2: 4rem;
+$font-h3: 1.8rem;
+$font-medium: 1.8rem;
+$font-default: 1.6rem;
+$font-sm: 1.2rem;
+
+$breakpoint-desktop: 80em; // 1280px
+$breakpoint-tablet: 62.5em; // 1000px
+$breakpoint-tablet-min: 55em; // 880px
+$breakpoint-mobile: 37.5em; // 600px
+$breakpoint-mobile-min: 31.25em; // 500px
+$breakpoint-mobile-sm: 24em; // 384px

@@ -1,0 +1,102 @@
+.testimonial {
+  width: 70%;
+  background-color: rgba($neutral-color-1, 0.8);
+  margin: 0 auto;
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 3.2rem;
+  align-items: center;
+  transform: skewX(-12deg);
+
+  & > * {
+    transform: skewX(12deg);
+  }
+
+  @media only screen and (max-width: $breakpoint-tablet-min) {
+    width: 90%;
+  }
+
+  @media only screen and (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    transform: skewX(0deg);
+    width: 100%;
+
+    & > * {
+      transform: skewX(0deg);
+    }
+  }
+
+  &__round {
+    width: 15rem;
+    height: 15rem;
+    position: relative;
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    // transform: skewX(12deg);
+  }
+
+  &__photo {
+    transition: all 0.5s;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+    @media only screen and (max-width: $breakpoint-tablet-min),
+      only screen and (hover: none) {
+      filter: brightness(80%);
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: $font-h3;
+    text-transform: uppercase;
+    color: $neutral-color-1;
+    transform: translate(-50%, 20%);
+    opacity: 0;
+    text-align: center;
+    transition: all 0.5s;
+    line-height: 1.6;
+
+    @media only screen and (max-width: $breakpoint-tablet-min),
+      only screen and (hover: none) {
+      opacity: 1;
+      transform: translate(-50%, 3%);
+    }
+  }
+
+  // @media only screen and (max-width: $breakpoint-tablet-min),
+  //   only screen and (hover: none)
+  // &__text {
+  // }
+
+  &__quote {
+    font-size: $font-medium;
+    line-height: 1.6;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+
+    @media only screen and (max-width: $breakpoint-tablet-min),
+      only screen and (hover: none) {
+      opacity: 1;
+      transform: translate(-50%, 3%);
+    }
+  }
+
+  &:hover &__photo {
+    filter: blur(12px) brightness(40%);
+
+    @media only screen and (max-width: $breakpoint-tablet-min),
+      only screen and (hover: none) {
+      filter: blur(0) brightness(80%);
+    }
+  }
+}

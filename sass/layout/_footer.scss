@@ -1,0 +1,128 @@
+.footer {
+  padding: 15rem 0;
+  background-color: $grey-color-dark;
+  font-size: $font-default;
+  color: $grey-color-light;
+  line-height: 1.6;
+
+  @media only screen and (max-width: $breakpoint-mobile) {
+    padding: 10rem 0;
+  }
+
+  &__contact-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+  }
+
+  &__logo {
+    height: 5rem;
+    margin-bottom: 1.4rem;
+  }
+
+  &__address,
+  &__contact {
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+
+    i {
+      font-size: 2.4rem;
+      color: $primary-color-main;
+    }
+  }
+
+  // &__quick-links {
+  // }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    &:any-link {
+      display: inline-block;
+      text-decoration: none;
+      color: inherit;
+      padding: 0.3rem 1.6rem;
+      transition: all 0.2s;
+    }
+
+    &:hover,
+    &:active {
+      background-color: $grey-color-dark;
+      box-shadow: $shadow-light;
+      transform: rotate(4.5deg) scale(1.3);
+      color: $primary-color-main;
+    }
+  }
+
+  &__social-box {
+    @media only screen and (max-width: $breakpoint-tablet-min) {
+      grid-column: 2 / -1;
+      grid-row: 1 / 2;
+    }
+
+    @media only screen and (max-width: $breakpoint-mobile-min) {
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    height: 5rem;
+    margin: 2.4rem 0;
+    padding: 1.3rem 2rem;
+    font-size: $font-default;
+    font-family: inherit;
+    border: none;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+
+    &:focus {
+      outline: none;
+      border-bottom: 3px solid $accent-color-2;
+      box-shadow: $shadow-light;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $primary-color-main;
+    }
+  }
+
+  &__icon-box {
+    display: flex;
+    gap: 1.6rem;
+  }
+
+  .link {
+    display: inline-block;
+    width: 4.8rem;
+    height: 4.8rem;
+    background-color: $grey-color-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+
+  &__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: $primary-color-main;
+  }
+
+  .copyright {
+    font-size: $font-sm;
+  }
+}

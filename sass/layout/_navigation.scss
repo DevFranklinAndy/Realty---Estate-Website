@@ -1,0 +1,143 @@
+.navigation {
+  &__checkbox {
+    display: none;
+  }
+
+  &__btn {
+    background-color: $grey-color-light;
+    box-shadow: $shadow-light;
+    border-radius: 50%;
+    z-index: 200;
+    position: fixed;
+    top: 2rem;
+    right: 3rem;
+    width: 7rem;
+    height: 7rem;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &__icon {
+    margin-top: 3.5rem;
+    position: relative;
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      display: inline-block;
+      background-color: $grey-color-dark;
+      transition: all 0.2s;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      top: -0.8rem;
+    }
+
+    &::after {
+      top: 0.8rem;
+    }
+  }
+
+  &__btn:hover &__icon::before {
+    top: -1rem;
+  }
+
+  &__btn:hover &__icon::after {
+    top: 1rem;
+  }
+
+  &__checkbox:checked + &__btn &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__btn &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__btn &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+
+  &__background {
+    position: fixed;
+    top: 2.56rem;
+    right: 3.56rem;
+    width: 6rem;
+    height: 6rem;
+    background: radial-gradient($primary-color-main, $primary-color-dark);
+    border-radius: 50%;
+    z-index: 150;
+    transition: all 0.6s cubic-bezier(0.55, 0, 1, 0.45);
+  }
+
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+    z-index: 160;
+    transition: all 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4.8rem;
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    &:any-link {
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: $font-h3;
+      color: $grey-color-light;
+      font-weight: 300;
+      display: flex;
+      gap: 1.6rem;
+      padding: 2rem 4rem;
+      background: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        $grey-color-light 50%
+      );
+      background-size: 240%;
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      background-position: 100%;
+      color: $primary-color-dark;
+      transform: translateX(1rem);
+    }
+  }
+
+  &__checkbox:checked ~ &__nav {
+    transform: translateX(0);
+  }
+}

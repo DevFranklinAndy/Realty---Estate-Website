@@ -1,0 +1,62 @@
+.composition {
+  position: relative;
+
+  @media only screen and (max-width: $breakpoint-mobile) {
+    display: none;
+  }
+  &__photo {
+    width: 55%;
+    position: absolute;
+    outline-offset: 1rem;
+    transition: all 0.3s;
+
+    @media only screen and (max-width: $breakpoint-tablet-min) {
+      width: 40%;
+    }
+
+    &--1 {
+      top: 3rem;
+      left: 20rem;
+
+      @media only screen and (max-width: $breakpoint-tablet-min) {
+        left: 40rem;
+      }
+    }
+
+    &--2 {
+      top: 7rem;
+
+      @media only screen and (max-width: $breakpoint-tablet-min) {
+        left: 20rem;
+      }
+    }
+
+    &--3 {
+      left: 15rem;
+      top: 17rem;
+
+      @media only screen and (max-width: $breakpoint-tablet-min) {
+        left: 8rem;
+      }
+    }
+
+    &:hover {
+      outline: 8px solid $primary-color-main;
+      transform: scale(1.1);
+      z-index: 10;
+    }
+  }
+
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95);
+  }
+}
+
+.photo {
+  width: 100%;
+  display: none;
+
+  @media only screen and (max-width: $breakpoint-mobile) {
+    display: block;
+  }
+}

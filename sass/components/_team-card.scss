@@ -1,0 +1,46 @@
+.team-card {
+  background-color: rgba($primary-color-light, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 3rem;
+  border-radius: 3px;
+  transition: all 0.3s;
+
+  &__img {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 50%;
+    outline-offset: 0.8rem;
+    outline: 3px solid $primary-color-main;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 9rem;
+  }
+
+  &__role {
+    font-size: $font-medium;
+    color: $primary-color-dark;
+  }
+
+  &__description {
+    font-size: $font-default;
+    line-height: 1.6;
+  }
+
+  &:hover {
+    transform: translateY(-0.5rem) scale(1.03);
+
+    @media only screen and (max-width: $breakpoint-tablet-min),
+      only screen and (hover: none) {
+      transform: translateY(0) scale(1);
+    }
+  }
+}

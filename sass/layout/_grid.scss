@@ -1,0 +1,63 @@
+.grid {
+  max-width: 120rem;
+  margin: 0 auto;
+  display: grid;
+  padding: 0 2rem;
+}
+
+.grid--col-1-of-1 {
+  gap: 8rem;
+  grid-template-columns: 1fr;
+
+  @media only screen and (max-width: $breakpoint-tablet) {
+    gap: 6rem;
+  }
+}
+
+.grid--col-1-of-2 {
+  gap: 8rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: min-content 20vw;
+
+  @media only screen and (max-width: $breakpoint-tablet) {
+    gap: 6rem;
+  }
+
+  @media only screen and (max-width: $breakpoint-tablet-min) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid--col-1-of-3 {
+  gap: 7rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media only screen and (max-width: $breakpoint-tablet) {
+    gap: 3rem;
+  }
+
+  @media only screen and (max-width: $breakpoint-tablet-min) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid--col-1-of-4 {
+  gap: 6rem;
+  grid-template-columns: repeat(4, 1fr);
+
+  @media only screen and (max-width: $breakpoint-tablet) {
+    gap: 3rem;
+  }
+
+  @media only screen and (max-width: $breakpoint-tablet-min) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: $breakpoint-mobile-min) {
+    grid-template-columns: 1fr;
+  }
+}

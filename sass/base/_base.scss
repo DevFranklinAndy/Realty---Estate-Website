@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $breakpoint-desktop) {
+    font-size: 50%;
+  }
+}
+
+body {
+  line-height: 1;
+  color: $grey-color-main;
+  font-family: $typeface-normal;
+  font-weight: 400;
+}
+
+::selection {
+  background-color: $primary-color-main;
+  color: $grey-color-light;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $primary-color-light;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $primary-color-dark;
+}

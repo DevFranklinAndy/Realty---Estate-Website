@@ -1,0 +1,88 @@
+.btn {
+  &:any-link {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 2rem 4rem;
+    border-radius: 50px;
+    font-size: $font-medium;
+    box-shadow: $shadow-light;
+    position: relative;
+    transition: transform 0.3s, opacity 0.3s;
+    animation: moveInBottom 1.5s ease-in-out backwards;
+  }
+
+  &::before {
+    content: "";
+    display: inherit;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    z-index: -2;
+    transition: inherit;
+    background-color: inherit;
+  }
+
+  &:hover {
+    transform: translateY(-1rem);
+
+    @media only screen and (max-width: $breakpoint-tablet-min),
+      only screen and (hover: none) {
+      transform: translateY(0);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+
+    &::before {
+      transform: scaleX(1.2) scaleY(1.4);
+      opacity: 0;
+    }
+  }
+
+  &--white {
+    background-color: $grey-color-light;
+    color: $grey-color-main;
+  }
+
+  &--orange {
+    background-color: $primary-color-main;
+    color: $grey-color-light;
+  }
+}
+
+.btn-text {
+  &:any-link {
+    display: inline-block;
+    text-decoration: none;
+    color: $primary-color-dark;
+    font-size: $font-default;
+    padding: 1rem 0.2rem 0.5rem 0.2rem;
+    border-bottom: 1.5px solid currentColor;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    background-color: $primary-color-main;
+    color: $grey-color-light;
+    transform: translateY(-0.5rem);
+
+    @media only screen and (max-width: $breakpoint-tablet-min),
+      only screen and (hover: none) {
+      transform: translateY(0);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+
+    @media only screen and (max-width: $breakpoint-tablet-min),
+      only screen and (hover: none) {
+      transform: translateY(0.5rem);
+    }
+  }
+}

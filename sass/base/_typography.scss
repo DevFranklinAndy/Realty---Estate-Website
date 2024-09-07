@@ -1,0 +1,62 @@
+%heading {
+  font-family: $typeface-primary;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.heading__typeface-1 {
+  @extend %heading;
+  font-size: $font-h1;
+  font-weight: 400;
+  animation: moveInRight 1s ease-in-out;
+
+  @media screen and (max-width: $breakpoint-mobile-min) {
+    font-size: 5.4rem;
+  }
+}
+
+.heading__typeface-2 {
+  @extend %heading;
+  font-size: $font-h2;
+  font-weight: 500;
+  background: linear-gradient(
+    to right,
+    $primary-color-light,
+    $primary-color-dark
+  );
+  background-clip: text;
+  color: transparent;
+
+  @media screen and (max-width: $breakpoint-mobile-min) {
+    font-size: 3.2rem;
+  }
+}
+
+.heading__typeface-3 {
+  @extend %heading;
+  font-size: $font-h3;
+  font-weight: 500;
+
+  @media screen and (max-width: $breakpoint-mobile-min) {
+    font-size: 1.7rem;
+  }
+}
+
+.heading__typeface-4 {
+  @extend %heading;
+  font-size: $font-medium;
+  font-weight: 300;
+
+  @media screen and (max-width: $breakpoint-mobile-min) {
+    font-size: 1.7rem;
+  }
+}
+
+.description {
+  font-size: $font-default;
+  line-height: 1.6;
+}
+
+.text-holder {
+  padding: 0 1rem;
+}
